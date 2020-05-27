@@ -9,7 +9,7 @@ Function Format-ShortInterval([Parameter(Mandatory)] [TimeSpan] $Interval) {
     #>
 
     if ($Interval.TotalMinutes -lt 1.0) {
-        return "{0:f2}s" -f $Interval.TotalSeconds
+        return "{0:f1}s" -f $Interval.TotalSeconds
     }
 
     if ($Interval.TotalHours -lt 1.0) {

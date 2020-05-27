@@ -1,5 +1,6 @@
 . "$PSScriptRoot\Format-ShortInterval.ps1"
 . "$PSScriptRoot\Is-Administrator.ps1"
+. "$PSScriptRoot\Utils.ps1"
 
 Function PrettyPrompt([System.ConsoleColor] $UserColor = "Blue", [System.ConsoleColor] $AdminColor = "Red", [System.ConsoleColor] $HostColor = "White") {
     <#
@@ -33,8 +34,7 @@ Function PrettyPrompt([System.ConsoleColor] $UserColor = "Blue", [System.Console
             return [TimeSpan]0
         }
 
-        $LastCmd = (Get-History)[-1]
-        return $LastCmd.EndExecutionTime - $LastCmd.StartExecutionTime
+        return Get-HistoryEntryDuration((Get-History)[-1])
     }
 
     function Get-ShortLocation {

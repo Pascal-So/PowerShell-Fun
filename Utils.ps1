@@ -1,3 +1,7 @@
+Function Get-HistoryEntryDuration([Microsoft.PowerShell.Commands.HistoryInfo] $HistoryEntry) {
+    return $HistoryEntry.EndExecutionTime - $HistoryEntry.StartExecutionTime
+}
+
 Function Search-Google {
     <#
     .SYNOPSIS
