@@ -59,5 +59,5 @@ function Define-Function {
         if (Test-Path "Alias:$Name") {Remove-Item "Alias:$Name" -Force}
     }
 
-    New-Item -Path "Function:global:$Name" -Value $Implementation
+    New-Item -Path "Function:global:$Name" -Value $Implementation | Out-Null
 }
