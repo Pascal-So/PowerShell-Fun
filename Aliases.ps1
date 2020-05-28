@@ -1,15 +1,9 @@
-<#
-.SYNOPSIS
-Aliases ¯\_(ツ)_/¯
-#>
+. "$PSScriptRoot\Set-Function.ps1"
 
-# Make sure Define-Command is available
-. "$PSScriptRoot\Define-Function.ps1"
-
-Define-Function ga {git add @ARGS}    -Force
-Define-Function gd {git diff @ARGS}   -Force
-Define-Function gc {git commit @ARGS} -Force
-Define-Function gs {git status @ARGS} -Force
+Set-Function ga {git add @ARGS}
+Set-Function gd {git diff @ARGS}
+Set-Function gc {git commit @ARGS}
+Set-Function gs {git status @ARGS}
 
 Function Find-ProgramPath ([String] $name, [uint32] $depth=2) {
     Function find-in([String] $path) {

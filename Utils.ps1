@@ -13,7 +13,7 @@ Function Search-Google {
         $query = 'https://www.google.com/search?q='
         foreach ($arg in $ARGS) { $query += "${arg}+" }
         $url = $query.Substring(0, $query.Length - 1)
-        start "$url"
+        Start-Process "$url"
 }
 
 Set-Alias glg Search-Google
